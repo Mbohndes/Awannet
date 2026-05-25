@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AwanNet - Internet Cepat & Stabil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Variabel Warna */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --primary: #0056b3; /* Biru Profesional */
+            --secondary: #e9ecef; /* Abu-abu terang */
+            --dark: #212529; /* Hitam teks */
+            --accent: #fd7e14; /* Oranye untuk tombol promosi */
+            --white: #ffffff;
+        }
+        body {
+            color: var(--dark);
+            background-color: var(--secondary);
+        }
+
+        /* --- NAVIGASI --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: var(--white);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .btn-login {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-login:hover {
+            background-color: #004494;
+        }
+
+        /* --- HERO SECTION (Bagian Utama) --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 50px;
+            background: linear-gradient(to right, #0056b3, #00d2ff);
+            color: var(--white);
+            min-height: 60vh;
+        }
+        .hero-content {
+            max-width: 50%;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .btn-cta {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(253, 126, 20, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(253, 126, 20, 0.6);
+        }
+        .hero-image {
+            max-width: 45%;
+            font-size: 100px; /* Placeholder ilustrasi pakai emoji/teks besar */
+            text-align: center;
+        }
+
+        /* --- PRICING / PROMO SECTION --- */
+        .pricing-section {
+            padding: 80px 50px;
+            text-align: center;
+            background-color: var(--white);
+        }
+        .pricing-section h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        .pricing-section > p {
+            margin-bottom: 50px;
+            color: #6c757d;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; /* Responsive flexbox */
+        }
+        .card {
+            background: var(--white);
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 40px 30px;
+            width: 300px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+        /* Pita Populer */
+        .badge-popular {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .price {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .price span {
+            font-size: 14px;
+            color: #6c757d;
+            font-weight: 400;
+        }
+        .features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .features li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            border-bottom: 1px dashed #e9ecef;
+            padding-bottom: 5px;
+        }
+        .btn-outline {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+
+        /* --- RESPONSIVE DESIGN (Smartphone) --- */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; padding: 20px; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .hero-content { max-width: 100%; }
+            .hero-content h1 { font-size: 32px; }
+            .hero-image { display: none; } /* Sembunyikan ilustrasi di HP */
+            .cards-container { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">☁️ Awan<span>Net</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Keunggulan</a></li>
+            <li><a href="#">Paket Promo</a></li>
+        </ul>
+        <a href="dash-pelanggan.html" class="btn-login">Login Pelanggan</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Koneksi Tanpa Batas, Harga Tetap Pas!</h1>
+            <p>Bergabunglah dengan ratusan rumah lainnya. Nikmati layanan internet rumah (RT/RW Net) yang stabil, tanpa FUP, dan dukungan teknisi lokal yang cepat tanggap.</p>
+            <a href="form-daftar.html" class="btn-cta">Cek Area & Daftar Sekarang</a>
+        </div>
+        <div class="hero-image">
+            🚀🌐
+        </div>
+    </header>
+
+    <section class="pricing-section">
+        <h2>Pilih Paket Internetmu</h2>
+        <p>Bebas kuota (Unlimited) untuk semua perangkat di rumah Anda.</p>
+        
+        <div class="cards-container">
+            <div class="card">
+                <h3>Paket Hemat</h3>
+                <div class="price">Rp 100.000<span>/bulan</span></div>
+                <ul class="features">
+                    <li>✔️ Kecepatan <b>10 Mbps</b></li>
+                    <li>✔️ Unlimited Tanpa FUP</li>
+                    <li>✔️ Cocok untuk 2-3 Gadget</li>
+                    <li>✔️ Support Teknisi 24/7</li>
+                </ul>
+                <a href="form-daftar.html" class="btn-outline">Pilih Paket</a>
+            </div>
+
+            <div class="card" style="border-color: var(--primary);">
+                <div class="badge-popular">Paling Diminati</div>
+                <h3>Paket Keluarga</h3>
+                <div class="price">Rp 150.000<span>/bulan</span></div>
+                <ul class="features">
+                    <li>✔️ Kecepatan <b>20 Mbps</b></li>
+                    <li>✔️ Unlimited Tanpa FUP</li>
+                    <li>✔️ Streaming HD Lancar</li>
+                    <li>✔️ Cocok untuk 4-6 Gadget</li>
+                </ul>
+                <a href="form-daftar.html" class="btn-cta" style="width: 100%; border-radius: 5px;">Pilih Paket</a>
+            </div>
+
+            <div class="card">
+                <h3>Paket Gamer</h3>
+                <div class="price">Rp 250.000<span>/bulan</span></div>
+                <ul class="features">
+                    <li>✔️ Kecepatan <b>50 Mbps</b></li>
+                    <li>✔️ Prioritas Ping Rendah</li>
+                    <li>✔️ Free Router Dual-Band</li>
+                    <li>✔️ Cocok untuk 7+ Gadget</li>
+                </ul>
+                <a href="form-daftar.html" class="btn-outline">Pilih Paket</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+       &copy; 2026 AwanNet | Dikembangkan oleh <a href="dash-admin.html" style="color: white; text-decoration: none;">Riski Kurniawan</a>
+    </footer>
+
+</body>
+</html>
