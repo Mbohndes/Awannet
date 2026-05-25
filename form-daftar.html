@@ -6,7 +6,7 @@
     <title>Pendaftaran Pasang Baru - AwanNet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Reset & Variabel Warna (Konsisten dengan Landing Page) */
+        
         * {
             margin: 0;
             padding: 0;
@@ -29,7 +29,7 @@
             min-height: 100vh;
         }
 
-        /* --- NAVIGASI SIMPEL --- */
+
         .navbar {
             padding: 15px 50px;
             background-color: var(--white);
@@ -54,7 +54,6 @@
         }
         .btn-back:hover { color: var(--primary); }
 
-        /* --- CONTAINER FORM --- */
         .form-container {
             max-width: 800px;
             margin: 40px auto;
@@ -79,13 +78,12 @@
             font-size: 14px;
         }
 
-        /* --- STYLING FORM & GRID --- */
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-        /* Membuat beberapa input memenuhi 2 kolom (full width) */
+
         .full-width {
             grid-column: span 2;
         }
@@ -101,7 +99,7 @@
             color: var(--dark);
         }
         .input-group label span {
-            color: #dc3545; /* Tanda bintang merah muda wajib isi */
+            color: #dc3545; 
         }
         .input-group input, 
         .input-group select, 
@@ -122,7 +120,6 @@
             box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
         }
 
-        /* Peta Placeholder (Sekadar visual untuk Wireframe) */
         .map-placeholder {
             background-color: #e9ecef;
             border: 1px solid var(--border);
@@ -154,7 +151,6 @@
             transform: translateY(-2px);
         }
 
-        /* --- FOOTER --- */
         footer {
             background-color: var(--dark);
             color: var(--white);
@@ -164,10 +160,9 @@
             margin-top: auto;
         }
 
-        /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             .form-grid {
-                grid-template-columns: 1fr; /* Jadi 1 kolom di HP */
+                grid-template-columns: 1fr; 
             }
             .full-width, .btn-submit {
                 grid-column: span 1;

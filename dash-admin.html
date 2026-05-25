@@ -6,7 +6,7 @@
     <title>Admin Dashboard - AwanNet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Reset & Variabel */
+
         * {
             margin: 0;
             padding: 0;
@@ -32,7 +32,7 @@
             min-height: 100vh;
         }
 
-        /* --- SIDEBAR KIRI --- */
+  
         .sidebar {
             width: 260px;
             background-color: var(--sidebar-bg);
@@ -71,15 +71,14 @@
             border-left: 4px solid var(--accent);
         }
 
-        /* --- KONTEN UTAMA KANAN --- */
+    
         .main-content {
             flex: 1;
-            margin-left: 260px; /* Jarak untuk sidebar */
+            margin-left: 260px; 
             display: flex;
             flex-direction: column;
         }
 
-        /* Top Header */
         .topbar {
             background-color: var(--white);
             padding: 15px 30px;
@@ -104,13 +103,13 @@
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* Area Dashboard */
+ 
         .dashboard-area {
             padding: 30px;
             flex: 1;
         }
 
-        /* 1. Baris Kartu Ringkasan (Grid 4 Kolom) */
+
         .summary-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -127,7 +126,7 @@
         .card-stat h4 { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; }
         .card-stat .value { font-size: 28px; font-weight: 700; color: var(--text-dark); }
 
-        /* 2. Baris Diagram & Area (Grid 2 Kolom) */
+
         .middle-grid {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -149,7 +148,7 @@
             padding-bottom: 10px;
         }
 
-        /* CSS Trik: Diagram Pie Chart (Tanpa Javascript) */
+
         .chart-container {
             display: flex;
             align-items: center;
@@ -158,21 +157,21 @@
         .pie-chart {
             width: 140px; height: 140px;
             border-radius: 50%;
-            /* 75% Lunas (Hijau), 25% Belum Lunas (Merah) */
+           
             background: conic-gradient(var(--success) 0% 75%, var(--danger) 75% 100%);
-            box-shadow: inset 0 0 0 20px var(--white); /* Membuat efek Donut Chart */
+            box-shadow: inset 0 0 0 20px var(--white); 
         }
         .chart-legend ul { list-style: none; font-size: 13px; font-weight: 600; }
         .chart-legend li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .legend-color { width: 12px; height: 12px; border-radius: 3px; }
 
-        /* Progress Bar Wilayah */
+  
         .area-stats { margin-bottom: 15px; }
         .area-info { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 5px;}
         .progress-bar-bg { width: 100%; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
         .progress-bar-fill { height: 100%; background: var(--primary); }
 
-        /* 3. Baris Tabel Validasi & Evaluasi */
+
         table {
             width: 100%;
             border-collapse: collapse;
